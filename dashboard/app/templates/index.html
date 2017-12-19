@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSV Processing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700,300" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles/app.css" />
+</head>
+
+<body>
+    <header>
+        <div style="text-align: left" id="logo">
+            <img src="/static/images/carlabs-logo.svg" />
+        </div>
+        <div style="text-align: right" id="app-name">
+            <h2>
+                CSV Processing
+            </h2>
+        </div>
+    </header>
+    <main>
+        <div id="content">
+            <form method="POST" action="/update">
+                {{ form.csrf_token }}
+                <p/>
+                <p>You can configure the following parameters for CSV processing:</p>
+                <table id="parameters">
+                    <tbody>
+                        <tr>
+                            <td class="parameter-name">{{ form.percentile.label }}</td>
+                            <td class="parameter-value">{{ form.percentile }}</td>
+                            <td class="parameter-hint">The percentile threshold value for processed CSV files. Valid values are from 1 to 100.</td>
+                        </tr>
+                        <tr>
+                            <td class="parameter-name">{{ form.channels.label }}</td>
+                            <td class="parameter-value">{{ form.channels }}</td>
+                            <td class="parameter-hint">A comma-separated list of Slack channel names or IDs to be notified when a CSV file is processed.</td>
+                        </tr>
+                        <tr>
+                            <td class="parameter-name">{{ form.users.label }}</td>
+                            <td class="parameter-value">{{ form.users }}</td>
+                            <td class="parameter-hint">A comma-separated list of Slack user names or IDs to be notified when a CSV file is processed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <input type="submit" value="Update">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div id="updated">
+            Page updated: <span id="page-update-time">{{ page_update_time }}</span>
+        </div>
+        <div id="links">
+        </div>
+    </footer>
+</body>
+
+</html>

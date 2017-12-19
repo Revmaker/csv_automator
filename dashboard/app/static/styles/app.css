@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+header {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    opacity: 1;
+    background-color: lightgrey;
+    height: 80px;
+    top: 0%;
+    position: fixed;
+    width: 100%;
+}
+
+#logo {}
+
+#logo img {
+    width: auto;
+    height: 60px;
+    float: left;
+    vertical-align: middle;
+}
+
+#app-name {
+    float: right;
+    vertical-align: middle;
+    font-family: MuseoSans;
+    height: 60px;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    /* background: aliceblue; */
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 90px;
+    height: 87%;
+    width: -10px;
+    z-index: 1000000;
+    overflow: auto;
+}
+
+table#parameters {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 20px;
+}
+
+td {
+    padding: 10px;
+}
+
+td.parameter-name {
+    text-align: right;
+}
+
+td.parameter-value {}
+
+td.parameter-value input {}
+
+td.parameter-value textarea {
+    width: 300px;
+    height: 100px;
+}
+
+td.parameter-hint {
+    color: darkgrey;
+    text-align: left;
+    width: 400px;
+}
+
+#updated {
+    color: lightgrey;
+    height: 100%;
+    bottom: 0%;
+    float: left;
+    top: 10px;
+    font-size: 90%;
+    position: relative;
+}
+
+#updated span {
+    font-style: italic;
+}
+
+#links a {
+    color: lightgrey;
+    height: 100%;
+    bottom: 0%;
+    float: right;
+    top: 10px;
+    position: relative;
+}
+
+footer {
+    height: 40px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    background-color: #393838;
+    opacity: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+}
