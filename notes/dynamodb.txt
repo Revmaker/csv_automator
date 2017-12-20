@@ -1,0 +1,4 @@
+
+CSVLengths
+- partition key: Name (string)
+- sort key: Length (number)

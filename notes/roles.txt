@@ -1,0 +1,50 @@
+
+lambda-dynamo-execution-role
+- policies: AWSLambdaDynamoDBExecutionRole, AWSLambdaBasicExecutionRole, AmazonSSMReadOnlyAccess
+
+ {
+            "Path": "/",
+            "RoleName": "lambda-dynamo-execution-role",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "lambda.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            }
+        }
+
+aws iam attach-role-policy --role-name lambda-dynamo-execution-role --policy-arn 'arn:aws:iam::aws:policy/service-role/AWSLambdaDynamoDBExecutionRole'
+aws iam attach-role-policy --role-name lambda-dynamo-execution-role --policy-arn 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+aws iam attach-role-policy --role-name lambda-dynamo-execution-role --policy-arn 'arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess'
+
+
+lambda-s3-execution-role
+- policies: AmazonS3FullAccess, AmazonDynamoDBFullAccess, AWSLambdaBasicExecutionRole, AmazonSSMReadOnlyAccess
+
+ {
+            "Path": "/",
+            "RoleName": "lambda-s3-execution-role",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "lambda.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            }
+        }
+
+aws iam attach-role-policy --role-name lambda-s3-execution-role --policy-arn 'arn:aws:iam::aws:policy/AmazonS3FullAccess'
+aws iam attach-role-policy --role-name lambda-s3-execution-role --policy-arn 'arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess'
+aws iam attach-role-policy --role-name lambda-s3-execution-role --policy-arn 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+aws iam attach-role-policy --role-name lambda-s3-execution-role --policy-arn 'arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess'
