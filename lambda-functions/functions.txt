@@ -1,0 +1,12 @@
+
+ProcessCSV:
+- inline: process_csv.py
+- runtime: python2.7
+- handler: process_csv.lambda_handler
+- role: lambda-s3-execution-role
+
+HandleRecord:
+- inline: handle_record.py
+- runtime: python2.7
+- handler: handle_record.lambda_handler
+- role: lambda-dynamo-execution-role
